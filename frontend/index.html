@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <meta name="theme-color" content="#6366f1" />
+    <meta name="background-color" content="#060913" />
+
+    <meta name="description" content="C-TECH — Plateforme officielle de gestion des membres et de communauté du Club Technologique Étudiant." />
+    <meta name="application-name" content="C-TECH" />
+
+    <title>C-TECH — Club Technologique Étudiant</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      #splash {
+        position: fixed; inset: 0; z-index: 9999;
+        background: #060913;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        gap: 18px; transition: opacity 0.5s ease;
+      }
+      #splash img { width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 0 24px #6366f1); animation: pulse 2s ease-in-out infinite; }
+      #splash .title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 900; letter-spacing: 5px; color: #818cf8; }
+      #splash .subtitle { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; letter-spacing: 3px; color: #64748b; text-transform: uppercase; font-weight: 700; }
+      @keyframes pulse { 0%,100% { filter: drop-shadow(0 0 12px #6366f1); } 50% { filter: drop-shadow(0 0 32px #a855f7); } }
+    </style>
+  </head>
+  <body>
+    <div id="splash">
+      <img src="/logo.png" alt="C-TECH Logo" />
+      <div class="title">C-TECH</div>
+      <div class="subtitle">Club Technologique Étudiant</div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const splash = document.getElementById('splash');
+          if (splash) { splash.style.opacity = '0'; setTimeout(() => splash.remove(), 500); }
+        }, 600);
+      });
+    </script>
+  </body>
+</html>
